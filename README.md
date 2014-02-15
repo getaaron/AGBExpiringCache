@@ -3,6 +3,8 @@ AGBExpiringCache
 
 An Objective-C memory cache that invalidates items after a certain time interval.
 
+The implementation uses `NSCache`, so the cache may also be invalidated on system memory pressure.
+
 ###Usage
 
 1. Create an `AGBExpiringCache` and optionally set its `expiryTimeInterval`.  The default is `3600` (1 hour).

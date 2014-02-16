@@ -5,18 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol AGBExpiringCacheItem <NSObject>
-
-@property (nonatomic, strong) NSDate *expiringCacheItemDate;
-
-@end
-
 @interface AGBExpiringCache : NSObject
 
-@property (nonatomic, strong) NSCache *cache;
-@property (nonatomic, assign) NSTimeInterval expiryTimeInterval;
+- (instancetype)initWithCacheExpireTime:(NSTimeInterval)expireTime;
+- (instancetype)initWithCache:(NSCache *)cache expireTime:(NSTimeInterval)expireTime;
 
 - (id)objectForKey:(id)key;
-- (void)setObject:(NSObject <AGBExpiringCacheItem> *)obj forKey:(id)key;
+- (void)setObject:(NSObject *)obj forKey:(id)key;
 
 @end
